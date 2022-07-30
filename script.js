@@ -12,32 +12,62 @@ function userInputLength() {
   } 
   return passwordLength;
 }
+//sets whether or not user wants lower case letters
+function userInputLowerCase() {
+  let lowerCase = confirm("Would you like password to include lowercase letters?\nClick 'OK' for yes or 'Cancel' for no.");
+  if (lowerCase) {
+    charsetLower = "abcdefghijklmnopqrstuvwxyz";
+  } else {
+    charsetLower = "";
+  }
+  return lowerCase;
+}
+//sets whether or not user wants uppercase letters
+function userInputUpperCase() {
+  let upperCase = confirm("Would you like password to include uppercase letters?\nClick 'OK' for yes or 'Cancel' for no.");
+  if (upperCase) {
+    charsetUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  } else {
+    charsetUpper = "";
+  }
+  return upperCase;
+}
 
+//sets whether or not user wants numbers
+function userInputNumbers() {
+  let numbers = confirm("Would you like password to include numbers?\nClick 'OK' for yes or 'Cancel' for no.");
+  if (numbers) {
+    charsetNumbers = "0123456789";
+  } else {
+    charsetNumbers = "";
+  }
+  return numbers;
+}
 //sets whether or not user wants special characters
 function userInputSpecialChar() {
   let specialChar = confirm("Would you like password to include special characters? \n(!\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)\nClick 'OK' for yes or 'Cancel' for no.");
   if (specialChar) {
-    charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()`~-=_+[]{}?><:;',./"
+    charsetSpecial = "!\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
   } else {
-    charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+    charsetSpecial = "";
   }
   return specialChar;
 }
-//sets whether or not user wants uppercase letters
 
-//sets whether or not user wants lower case letters
-
-//sets whether or not user wants 
 
 function generatePassword() {
   var length = userInputLength(); //character length is defined by userInputLength
-      type = userInputSpecialChar(); //character type is defined by userInputSpecialChar
-      retVal = ""; //variable for generated password
+      userInputLowerCase();       //Lowercase function 
+      userInputUpperCase();       //Uppercase function
+      userInputNumbers();         //Number function
+      userInputSpecialChar();     //Special character function 
+      charset = (charsetLower + charsetUpper + charsetNumbers + charsetSpecial); // specific characters called into charset variable
+      passwordGenerated = ""; //variable for generated password
       //for loop
   for (var i = 0, n = charset.length; i < length; ++i) {
-      retVal += charset.charAt(Math.floor(Math.random() * n));
+      passwordGenerated += charset.charAt(Math.floor(Math.random() * n));
   }
-  return retVal;
+  return passwordGenerated;
 }
 
 
