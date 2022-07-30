@@ -8,7 +8,7 @@ function userInputLength() {
   let passwordLength = prompt("Enter length of password \nMust be between 8 and 128 characters.");
   if (passwordLength < 8 || passwordLength > 128) { //if password is shorter than 8 characters or longer than 128
     alert("Password length must be between 8 and 128 characters."); //alert message
-    window.location = 'C:/Users/Zac/OneDrive/Desktop/challenge_3/02-Challenge/Develop/index.html'.reload(); //page reloads
+    window.location = 'https://zacfisher1990.github.io/password_generator/'.reload(); //page reloads
   } 
   return passwordLength;
 }
