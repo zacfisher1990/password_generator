@@ -4,7 +4,7 @@ The purpose of this project is to generate a password after the user answers the
 
 When the user clicks on the generate password button...
 
-![alt text](http://https://github.com/zacfisher1990/password_generator/edit/main/screen1.png)
+![alt text]([http://https://github.com/zacfisher1990/password_generator/edit/main/screen1.png](https://github.com/zacfisher1990/password_generator/blob/main/screen1.png))
 
 The user is prompted to enter amount of characters they want in the password...
 
